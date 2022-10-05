@@ -1,11 +1,11 @@
 class Table extends Render{
-    let tableEl;
+    static tableEl = "";
 
     constructor(){
         super();
         this.init()
     }
-    
+
     init(el){
         this.tableEl = el.appendChild(
             `<table id="table" class="table">

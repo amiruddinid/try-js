@@ -1,4 +1,4 @@
-[
+const motor = [
     {
         "manufaktur": "Honda",
         "transmisi" : "Matic",
