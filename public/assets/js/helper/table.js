@@ -3,11 +3,10 @@ class Table extends Render{
 
     constructor(){
         super();
-        this.init()
     }
 
     init(el){
-        this.tableEl = el.appendChild(
+        el.innerHTML +=
             `<table id="table" class="table">
                 <thead>
                     <tr>
@@ -22,10 +21,22 @@ class Table extends Render{
                 </tbody>
             </table>
           `
-        )
+        
+        this.tableEl = document.getElementById('table')
     }
-
-    renderBody(){
-
+    renderBody(data){
+        // const tbody = this.tableEl.childNodes[3];
+        const tbody = this.tableEl.querySelector('tbody');
+        let result = "";
+        for(let i = 0; i < data.length; i++){
+            result +=`<tr>
+                <td>${i+1}</td>
+                <td>${data[i].nama}</td>
+                <td>${data[i].manufaktur}</td>
+                <td>${data[i].transmisi}</td>
+                <td>${data[i].tahun}</td>
+            </tr>`
+        }
+        tbody.innerHTML = result;
     }
 }
